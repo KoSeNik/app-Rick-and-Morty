@@ -16,15 +16,15 @@ const Categories = () => {
     data = locations;
   }
   return (
-    <>
+    <div className="Content">
       {data.map((el) => (
-        <div key={el.id}>
-          <h3>
+        <div key={el.id} className="Item">
+          <div>
             <Link to={`/${params.category}/${el.name}`}>{el.name}</Link>
-          </h3>
+          </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -8,14 +8,14 @@ const Character = () => {
   );
 
   return (
-    <>
+    <div className="Content">
       <img src={character.image} alt="" />
       <div>Имя: {character.name}</div>
       <div>Статус: {character.status}</div>
       <div>Вид: {character.species}</div>
       <div>Пол: {character.gender}</div>
       {character.type && <div>Тип: {character.type}</div>}
-    </>
+    </div>
   );
 };
 

@@ -6,10 +6,12 @@ import Location from "./pages/Location";
 import Episode from "./pages/Episode";
 import NotFound from "./pages/NotFound";
 import "./App.css";
+import NavBar from "./pages/NavBar";
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/categories/:category" element={<Categories />} />
