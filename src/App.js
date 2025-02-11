@@ -4,6 +4,7 @@ import Categories from "./pages/Categories";
 import Character from "./pages/Character";
 import Location from "./pages/Location";
 import Episode from "./pages/Episode";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/characters/:name" element={<Character />} />
         <Route path="/locations/:name" element={<Location />} />
         <Route path="/episodes/:name" element={<Episode />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
