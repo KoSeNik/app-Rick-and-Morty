@@ -1,9 +1,17 @@
+import { Routes, Route } from "react-router-dom";
+import Main from "./pages/Main";
+import Categories from "./pages/Categories";
+import Character from "./pages/Character";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">App Rick-and-Morty</header>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/categories/:category" element={<Categories />} />
+        <Route path="/characters/:name" element={<Character />} />
+      </Routes>
     </div>
   );
 }
