@@ -8,12 +8,16 @@ const Categories = () => {
   const params = useParams();
 
   let data;
-  if (params.category === "characters") {
-    data = characters;
-  } else if (params.category === "episodes") {
-    data = episodes;
-  } else if (params.category === "locations") {
-    data = locations;
+  switch (params.category) {
+    case "characters":
+      data = characters;
+      break;
+    case "episodes":
+      data = episodes;
+      break;
+    case "locations":
+      data = locations;
+      break;
   }
   return (
     <div className="content">
