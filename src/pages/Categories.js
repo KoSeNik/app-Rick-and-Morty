@@ -16,9 +16,9 @@ const Categories = () => {
     data = locations;
   }
   return (
-    <div className="Content">
+    <div className="content">
       {data.map((el) => (
-        <div key={el.id} className="Item">
+        <div key={el.id} className="item">
           <div>
             <Link to={`/${params.category}/${el.name}`}>{el.name}</Link>
           </div>

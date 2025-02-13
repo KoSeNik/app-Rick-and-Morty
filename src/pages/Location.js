@@ -8,7 +8,7 @@ const Location = () => {
   );
 
   return (
-    <div className="Content">
+    <div className="content">
       <div>Имя: {location.name}</div>
       <div>Тип: {location.type}</div>
       <div>Измерение: {location.dimension}</div>

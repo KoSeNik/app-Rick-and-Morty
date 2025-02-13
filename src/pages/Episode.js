@@ -8,7 +8,7 @@ const Episode = () => {
   );
 
   return (
-    <div className="Content">
+    <div className="content">
       <div>Имя: {episode.name}</div>
       <div>Дата выхода: {episode.air_date}</div>
       <div>Эпизод: {episode.episode}</div>

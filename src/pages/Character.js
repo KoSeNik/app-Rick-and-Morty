@@ -8,7 +8,7 @@ const Character = () => {
   );
 
   return (
-    <div className="Content">
+    <div className="content">
       <img src={character.image} alt="" />
       <div>Имя: {character.name}</div>
       <div>Статус: {character.status}</div>

@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="Nav">
+    <nav className="nav">
       <ul>
         <li>
           <NavLink
-            className={({ isActive }) => (isActive ? "Red" : null)}
+            className={({ isActive }) => (isActive ? "red" : null)}
             to="/"
           >
             Главная
@@ -14,7 +14,7 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            className={({ isActive }) => (isActive ? "Red" : null)}
+            className={({ isActive }) => (isActive ? "red" : null)}
             to="/categories/characters"
           >
             Герои
@@ -22,7 +22,7 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            className={({ isActive }) => (isActive ? "Red" : null)}
+            className={({ isActive }) => (isActive ? "red" : null)}
             to="/categories/locations"
           >
             Локации
@@ -30,7 +30,7 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            className={({ isActive }) => (isActive ? "Red" : null)}
+            className={({ isActive }) => (isActive ? "red" : null)}
             to="/categories/episodes"
           >
             Эпизоды
