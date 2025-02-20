@@ -18,6 +18,8 @@ const Categories = () => {
     case "locations":
       data = locations;
       break;
+    default:
+      data = characters;
   }
   return (
     <div className="content">
