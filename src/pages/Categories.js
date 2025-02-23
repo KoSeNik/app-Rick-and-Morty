@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import characters from "../data/characters.json";
 import episodes from "../data/episode.json";
 import locations from "../data/location.json";
@@ -22,15 +23,17 @@ const Categories = () => {
       data = characters;
   }
   return (
-    <div className="content">
-      {data?.map((el) => (
-        <div key={el.id} className="item">
-          <div>
-            <Link to={`/${params.category}/${el.name}`}>{el.name}</Link>
+    <Suspense fallback={<h1>Загрузка данных...</h1>}>
+      <div className="content">
+        {data?.map((el) => (
+          <div key={el.id} className="item">
+            <div>
+              <Link to={`/${params.category}/${el.name}`}>{el.name}</Link>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </Suspense>
   );
 };
 
