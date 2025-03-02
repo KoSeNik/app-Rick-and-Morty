@@ -19,7 +19,7 @@ const Character = () => {
     <ErrorBoundary>
       <Suspense fallback={<h1>Загрузка данных...</h1>}>
         <div className="content">
-          <img src={character.image} alt={character.name} />
+          <img src={character.image} alt="" />
           <div>Имя: {character.name}</div>
           <div>Статус: {character.status}</div>
           <div>Вид: {character.species}</div>
