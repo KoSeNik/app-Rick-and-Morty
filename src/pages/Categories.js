@@ -9,8 +9,6 @@ const Categories = () => {
   const { items, loading, error, hasMore, lastElementRef } =
     useInfinityScroll(apiCategory);
 
-  console.log(apiCategory);
-  
   return (
     <Suspense fallback={<h1>Загрузка данных...</h1>}>
       <div className="content">

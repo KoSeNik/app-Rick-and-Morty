@@ -35,7 +35,7 @@ function App() {
             }
           />
           <Route
-            path="/characters/:name"
+            path="/characters/:id"
             element={
               <PrivateRoute>
                 <Character />
@@ -43,7 +43,7 @@ function App() {
             }
           />
           <Route
-            path="/locations/:name"
+            path="/locations/:id"
             element={
               <PrivateRoute>
                 <Location />
@@ -51,7 +51,7 @@ function App() {
             }
           />
           <Route
-            path="/episodes/:name"
+            path="/episodes/:id"
             element={
               <PrivateRoute>
                 <Episode />

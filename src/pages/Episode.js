@@ -1,13 +1,19 @@
 import { Suspense } from "react";
-import episodes from "../data/episode.json";
 import { useParams } from "react-router-dom";
 import ErrorBoundary from "../component/ErrorBoundary";
+import { useFetchItemById } from "../hooks/useFetchItemById";
 
 const Episode = () => {
-  const params = useParams();
-  const episode = episodes.find(
-    (el) => el.name === params.name.replace(/\s/g, " ")
-  );
+  const { id } = useParams();
+  const { item: episode, loading, error } = useFetchItemById("episode", id);
+
+  if (loading) {
+    return <h1>Загрузка данных...</h1>;
+  }
+
+  if (error || !episode) {
+    return <h1>Эпизод не найден или произошла ошибка</h1>;
+  }
 
   return (
     <ErrorBoundary>
