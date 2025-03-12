@@ -1,16 +1,22 @@
 import { Routes, Route } from "react-router-dom";
-import Main from "./pages/Main";
-import Categories from "./pages/Categories";
-import Character from "./pages/Character";
-import Location from "./pages/Location";
-import Episode from "./pages/Episode";
-import NotFound from "./pages/NotFound";
-import NavBar from "./pages/NavBar";
-import { Login } from "./pages/Login";
+import { lazy } from "react";
 import { AuthProvider } from "./context/AuthProvider";
 import { AuthStatus } from "./component/AuthStatus";
 import { PrivateRoute } from "./component/PrivateRoute";
-import "./app.css";
+import "./App.css";
+
+const Main = lazy(() => import("./pages/Main"));
+const Categories = lazy(() => import("./pages/Categories"));
+const Location = lazy(() => import("./pages/Location"));
+const Episode = lazy(() => import("./pages/Episode"));
+const Character = lazy(() => import("./pages/Character"));
+const NavBar = lazy(() => import("./pages/NavBar"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Login = lazy(() =>
+  import("./pages/Login").then((module) => ({
+    default: module.Login,
+  }))
+);
 
 function App() {
   return (
@@ -29,7 +35,7 @@ function App() {
             }
           />
           <Route
-            path="/characters/:name"
+            path="/characters/:id"
             element={
               <PrivateRoute>
                 <Character />
@@ -37,7 +43,7 @@ function App() {
             }
           />
           <Route
-            path="/locations/:name"
+            path="/locations/:id"
             element={
               <PrivateRoute>
                 <Location />
@@ -45,7 +51,7 @@ function App() {
             }
           />
           <Route
-            path="/episodes/:name"
+            path="/episodes/:id"
             element={
               <PrivateRoute>
                 <Episode />
